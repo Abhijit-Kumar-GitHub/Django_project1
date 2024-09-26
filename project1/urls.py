@@ -20,5 +20,14 @@ from project1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about-us/', views.aboutUs)
+    path('about-us/', views.aboutUs),
+    path('test-page/', views.testPage),
+    path('archetype', views.archetype),
+
+#dynamic routing/url: where we can give details of different subpages from a page using  single page eg. we don't have different page for each of the thousands of products on shopping websit, instesad we follow dynamic url
+
+#it can take three types of values, int, string and slug(this-is-an-example-of-slug)
+
+    path('archetype/<int:archetypeId>', views.archetypeDetails),    #only if we know the type of data that will be coming our way, otherwise just put 'archetype/<archetypeId>'
+
 ]
